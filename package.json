@@ -1,0 +1,38 @@
+{
+  "name": "React-Shop-Demo",
+  "version": "1.0.0",
+  "description": "A web application for customers to search, select, and buy products.",
+  "main": "./client/index.js",
+  "scripts": {
+    "watch:server": "nodemon ./server/index.js",
+    "bundle": "browserify ./client/index.js -t babelify -o ./server/public/main.js",
+    "watch:bundle": "watchify client/index.js -vd -t babelify -o ./server/public/main.js",
+    "allwatch": "run-p watch:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robert-Jung/React-Shop-Demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robert-Jung/React-Shop-Demo/issues"
+  },
+  "homepage": "https://github.com/Robert-Jung/React-Shop-Demo#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "redux": "^3.6.0",
+    "semantic-ui-react": "^0.68.3"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.3.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "watchify": "^3.9.0"
+  }
+}
