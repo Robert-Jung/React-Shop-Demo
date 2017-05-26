@@ -5,7 +5,7 @@ function ProductList(props) {
   const products = props.productList
   return (
     <div>
-      <Card.Group>
+      <Card.Group itemsPerRow={4}>
         {products.map((product, i) => (
           <Card
             key={i}
