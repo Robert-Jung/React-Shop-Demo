@@ -2,10 +2,12 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const store = require('./store')
 const ProductList = require('./ProductList')
+const MainHeader = require('./Header')
 
 function App(props) {
   return (
     <div>
+      <MainHeader />
       <ProductList productList={ props.products } />
     </div>
   )
