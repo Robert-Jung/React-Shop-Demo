@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/Robert-Jung/React-Shop-Demo#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "level": "^1.7.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "redux": "^3.6.0",

@@ -1,12 +1,12 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const store = require('./store')
-const TestCard = require('./TestPage')
+const ProductList = require('./ProductList')
 
 function App(props) {
   return (
     <div>
-      <TestCard text={props.test} />
+      <ProductList productList={ props.products } />
     </div>
   )
 }
@@ -14,15 +14,15 @@ function App(props) {
 function render() {
   const currentState = store.getState()
   const $root = document.querySelector('#app')
-  console.log(currentState)
 
   ReactDOM.render(<App {...currentState}/>, $root)
 }
 
-store.dispatch({
-  type: 'TEST_WORKING',
-  text: 'Test is Working'
-})
+fetch('/products')
+  .then(res => res.json())
+  .then(products => {
+    store.dispatch({ type: 'LOAD_PRODUCTS', products })
+  })
 
 store.subscribe(render)
 
