@@ -1,15 +1,15 @@
 const Redux = require('redux')
 
-const test = function testList(state = [], action) {
+const products = function productList(state = [], action) {
   switch(action.type) {
-    case 'TEST_WORKING':
-      return action.text
+    case 'LOAD_PRODUCTS':
+      return action.products
     default:
       return state
   }
 }
 
-const reducer = Redux.combineReducers({ test })
+const reducer = Redux.combineReducers({ products })
 
 const store = Redux.createStore(reducer)
 
