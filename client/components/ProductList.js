@@ -1,18 +1,24 @@
 const React = require('react')
 const { Card, Icon, Image } = require('semantic-ui-react')
 
+function handleDetailPage(event) {
+  const id = event.currentTarget.id
+  
+}
+
 function ProductList(props) {
-  const products = props.productList
   return (
     <div>
       <Card.Group itemsPerRow={4}>
-        {products.map((product, i) => (
+        {props.products.map((product, i) => (
           <Card
+            id={i}
             key={i}
             image={product.image}
             header={product.productName}
             meta={product.price}
             description={product.description}
+            onClick={handleDetailPage}
             />
         ))}
       </Card.Group>

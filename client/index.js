@@ -1,14 +1,15 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const store = require('./store')
-const ProductList = require('./ProductList')
-const MainHeader = require('./Header')
+const ProductList = require('./components/ProductList')
+const MainHeader = require('./components/Header')
+const { productsLoaded } = require('./actions')
 
 function App(props) {
   return (
     <div>
       <MainHeader />
-      <ProductList productList={ props.products } />
+      <ProductList {...props} />
     </div>
   )
 }
@@ -20,12 +21,12 @@ function render() {
   ReactDOM.render(<App {...currentState}/>, $root)
 }
 
-fetch('/products')
-  .then(res => res.json())
-  .then(products => {
-    store.dispatch({ type: 'LOAD_PRODUCTS', products })
-  })
-
 store.subscribe(render)
 
 render()
+
+fetch('/products')
+  .then(res => res.json())
+  .then(products => {
+    store.dispatch(productsLoaded(products))
+  })
