@@ -3,10 +3,10 @@ const { Card, Icon, Image } = require('semantic-ui-react')
 
 function handleDetailPage(event) {
   const id = event.currentTarget.id
-  
+  console.log(id)
 }
 
-function ProductList(props) {
+const ProductList = (props) => {
   return (
     <div>
       <Card.Group itemsPerRow={4}>

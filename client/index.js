@@ -5,7 +5,7 @@ const ProductList = require('./components/ProductList')
 const MainHeader = require('./components/Header')
 const { productsLoaded } = require('./actions')
 
-function App(props) {
+const App = (props) => {
   return (
     <div>
       <MainHeader />
@@ -14,7 +14,7 @@ function App(props) {
   )
 }
 
-function render() {
+const render = () => {
   const currentState = store.getState()
   const $root = document.querySelector('#app')
 
